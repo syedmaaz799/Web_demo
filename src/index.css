@@ -1,13 +1,284 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes whatsappBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes whatsappRipple {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Decorative underline styles for titles */
+.services-title,
+.contact-title,
+.call-to-action-title,
+.faq-title,
+.work-process-title,
+.whats-included-title {
+  position: relative;
+  display: inline-block;
+}
+
+/* The long, thin, gray bottom line */
+.services-title::before,
+.contact-title::before,
+.call-to-action-title::before,
+.faq-title::before,
+.work-process-title::before,
+.whats-included-title::before {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: #DDDDDD;
+}
+
+/* The short, thick, blue top line */
+.services-title::after,
+.contact-title::after,
+.call-to-action-title::after,
+.faq-title::after,
+.work-process-title::after,
+.whats-included-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: #47B2E4;
+  border-radius: 2px;
+}
+
+/* Essential responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Fixed size double check icon */
+.fixed-check-icon {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+  margin-right: 12px;
+}
+
+.fixed-question-icon {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+  margin-right: 8px;
+}
+
+.fixed-contact-icon {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+/* Call to Action Content Styling Only */
+.call-to-action-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* WhatsApp Float Button Fixed Size */
+.whatsapp-float-button {
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  min-height: 60px !important;
+  max-width: 60px !important;
+  max-height: 60px !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+/* Book Now Form Responsive Sizing */
+@media (max-width: 768px) {
+  .book-now-form {
+    width: 90vw !important;
+    height: auto !important;
+    min-height: 500px !important;
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-now-form {
+    width: 95vw !important;
+    height: auto !important;
+    min-height: 400px !important;
+    padding: 15px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .book-now-form {
+    width: 80vw !important;
+    height: auto !important;
+    min-height: 600px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .book-now-form {
+    width: 738.99px !important;
+    height: 680.59px !important;
+  }
+}
+
+/* White Card Responsive Sizing */
+@media (max-width: 768px) {
+  .white-card-responsive {
+    width: 90% !important;
+    height: auto !important;
+    min-height: 120px !important;
+    padding: 20px 15px !important;
+    left: 5% !important;
+    max-height: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .white-card-responsive {
+    width: 95% !important;
+    height: auto !important;
+    min-height: 100px !important;
+    padding: 15px 10px !important;
+    left: 2.5% !important;
+    max-height: none !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .white-card-responsive {
+    width: 80% !important;
+    height: auto !important;
+    min-height: 140px !important;
+    padding: 25px 18px !important;
+    left: 10% !important;
+    max-height: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .white-card-responsive {
+    width: 261px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
 }
