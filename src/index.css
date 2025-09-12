@@ -244,33 +244,33 @@ img {
 /* White Card Responsive Sizing */
 @media (max-width: 768px) {
   .white-card-responsive {
-    width: 90% !important;
+    width: 261px !important;
     height: auto !important;
     min-height: 120px !important;
-    padding: 20px 15px !important;
-    left: 5% !important;
+    padding: 35px 20px 30px !important;
+    left: -20px !important;
     max-height: none !important;
   }
 }
 
 @media (max-width: 480px) {
   .white-card-responsive {
-    width: 95% !important;
+    width: 261px !important;
     height: auto !important;
     min-height: 100px !important;
-    padding: 15px 10px !important;
-    left: 2.5% !important;
+    padding: 35px 20px 30px !important;
+    left: -20px !important;
     max-height: none !important;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .white-card-responsive {
-    width: 80% !important;
+    width: 261px !important;
     height: auto !important;
     min-height: 140px !important;
-    padding: 25px 18px !important;
-    left: 10% !important;
+    padding: 35px 20px 30px !important;
+    left: -20px !important;
     max-height: none !important;
   }
 }
