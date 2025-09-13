@@ -61,10 +61,7 @@ const WorkProcess: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 
-            className="text-3xl md:text-4xl font-bold uppercase mb-4"
-            style={{ color: '#37517E', fontFamily: 'Jost, sans-serif' }}
-          >
+          <h2 className="work-process-title text-[32px] font-jost font-bold uppercase text-service-blue pb-5 mb-5">
             WORK PROCESS
           </h2>
           <p 
